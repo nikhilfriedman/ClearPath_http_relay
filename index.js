@@ -35,6 +35,12 @@ app.get('/api/device/receive', (req, res) => {
   deviceQueue = [];
 });
 
+// quick health‐check
+app.get('/health', (req, res) => {
+  res.json({ status: 'ok', ts: Date.now() });
+});
+
+
 // Health check
 app.get('/', (req, res) => res.send('OK'));
 
